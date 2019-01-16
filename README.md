@@ -67,6 +67,7 @@ From the above results, we can see why there is a gtk conflict error. OpenVINO R
 Nedd to modify CMake to specify opencv v3.4.2
 ```bash
 set(OpenCV_DIR $HOME/code/opencv/build)
+export OpenCV_DIR=$HOME/code/opencv/build
 ```
 
 ```bash
@@ -76,4 +77,8 @@ intel@intel-desktop:~/ros2_overlay_ws/install/dynamic_vino_sample/lib/dynamic_vi
 	libopencv_videoio.so.3.4 => /usr/local/lib/libopencv_videoio.so.3.4 (0x00007f5f11ce4000)
 	libopencv_imgcodecs.so.3.4 => /usr/local/lib/libopencv_imgcodecs.so.3.4 (0x00007f5f116fd000)
 	libopencv_imgproc.so.3.4 => /usr/local/lib/libopencv_imgproc.so.3.4 (0x00007f5f0edeb000)
+```
+```bash
+ldd pipeline_with_params | grep gtk
+libgtk-3.so.0 => /usr/lib/x86_64-linux-gnu/libgtk-3.so.0 (0x00007f99612d5000)
 ```
